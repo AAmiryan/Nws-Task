@@ -1,0 +1,7 @@
+.button{
+    height: 40px;
+    border: 2px solid red;
+    color: red;
+    background-color: white;
+    margin: 10px;
+}
