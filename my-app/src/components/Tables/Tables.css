@@ -1,15 +1,13 @@
-.tablesWrap {
-}
 .tablesRow {
   display: grid;
   gap: 20px;
 
-  grid-template-columns: 200px 90%;
+  grid-template-columns: 210px 100%;
 }
 
 .buttonContainer {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 
-  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-columns: 210px 210px 210px 210px 210px 210px;
 }

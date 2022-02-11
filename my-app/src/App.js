@@ -19,9 +19,7 @@ function App() {
     if (data.length === 0) {
       getData();
     }
-  }, [data, data.length]);
-
-  console.log(data, "ssssssssssssssssssss");
+  }, [data]);
 
   return (
     <div className="App">
@@ -29,7 +27,7 @@ function App() {
         <Tables2 />
       </div>
       <div className="tableBottom">
-        <Tables />
+        <Tables data={data}/>
       </div>
     </div>
   );

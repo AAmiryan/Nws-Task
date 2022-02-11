@@ -1,17 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons.js";
 import Input from "../Input/Input.js";
 import "./Table2.css";
 
 const Tables = () => {
+  
+
   return (
     <div className="table2Wrap">
       <div className="tableRow">
         <div>Таскономия</div>
         <div className="buttonContainer">
           {[1, 2, 3, 4, 5].map(() => (
-            <Button />
+            <Button name = 'email'/>
           ))}
         </div>
       </div>
@@ -19,7 +21,7 @@ const Tables = () => {
         <div>Период</div>
         <div className="buttonContainer">
           {[1, 2, 3, 4, 5].map(() => (
-            <Button />
+            <Button name = 'email'/>
           ))}
         </div>
       </div>
