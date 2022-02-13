@@ -1,11 +1,50 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons.js";
 import Input from "../Input/Input.js";
 import "./Table2.css";
 
-const Tables = () => {
-  
+const reportPeriodType = [
+  { name: "Mesechnie", value: "m" },
+  { name: "Godovaya", value: "y" },
+  { name: "Kvartalnaya", value: "q" },
+  { name: "Neregulyarnaya", value: "r" },
+];
+
+const Tables = ({ data, setData }) => {
+  const [reportPeriod, setReportPeriod] = useState("m");
+  const [description, setDescription] = useState(null);
+
+  const onChangeReportPeriodType = (item) => {
+    setReportPeriod(item.value);
+  };
+
+  const changeValue = (value) => {
+    setDescription(value);
+  };
+
+  const handleKeypress = (event) => {
+    console.log(event, "??????????????????????????????");
+    if (event.key === "Enter" && event.target.value !== "") {
+      setData([
+        ...data,
+        {
+          name: event.target.value,
+          nfoType: "Общество взаимного страхования",
+          nfoTypeId: "JTINS",
+          reportTypeId: "10rd_stat",
+          reportPeriodTypeId: reportPeriod,
+          reportType:
+            "Статистическая отчетность, представляемая в течение 10 рабочих дней после отчетной даты",
+          reportPeriodType:
+            "Отчетность на конец года, квартала (4 квартал), месяца (декабрь)",
+          description: "description",
+          entryPointDocument: `http://www.cbr.ru/xbrl/nso/ins/rep/2021-09-30/ep/ep_JTINS_10rd_0420162_y.xsd/${new Date().getTime()}`,
+        },
+      ]);
+      event.target.value = "";
+    }
+  };
 
   return (
     <div className="table2Wrap">
@@ -13,25 +52,34 @@ const Tables = () => {
         <div>Таскономия</div>
         <div className="buttonContainer">
           {[1, 2, 3, 4, 5].map(() => (
-            <Button name = 'email'/>
+            <Button name="email" />
           ))}
         </div>
       </div>
       <div className="tableRow">
         <div>Период</div>
         <div className="buttonContainer">
-          {[1, 2, 3, 4, 5].map(() => (
-            <Button name = 'email'/>
+          {reportPeriodType.map((item) => (
+            <Button
+              name={item.name}
+              setActiveValue={onChangeReportPeriodType}
+              activeValue={item.value}
+            />
           ))}
         </div>
       </div>
       <div className="tableRow">
         <div>Тип НФО</div>
-        <Select />
+        <Select
+          data={data
+            .filter((item) => reportPeriod === item.reportPeriodTypeId)
+            .map((item) => ({ name: item.description }))}
+          setActiveValue={changeValue}
+        />
       </div>
       <div className="tableRow">
         <div>Отчетность</div>
-        <Input />
+        <Input onkeypress={handleKeypress} />
       </div>
     </div>
   );

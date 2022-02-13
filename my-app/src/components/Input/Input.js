@@ -1,10 +1,11 @@
 import React from "react";
 import "./Input.css"
 
-const Input = () => {
+const Input = ({onkeypress}) => {
   return (
     <div>
-     <input className = "input" />
+      
+     <input className = "input"  onKeyPress={onkeypress}/>
     </div>
   );
 };

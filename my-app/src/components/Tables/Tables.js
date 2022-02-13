@@ -5,8 +5,7 @@ import Button from "../Buttons/Buttons";
 import "./Tables.css";
 
 const Tables = ({ data }) => {
-  const [activeValue, setActiveValue] = useState("rrrr");
-  console.log(activeValue, 'activeValue');
+  const [activeValue, setActiveValue] = useState("ep_JTINS_10rd_0420162_y");
 
   return (
     <div className="tablesWrap">
@@ -18,7 +17,7 @@ const Tables = ({ data }) => {
               name={item.name}
               key={item.name}
               activeValue={activeValue}
-              setActiveValue={setActiveValue}
+              setActiveValue={(item)=>{setActiveValue(item.name)}}
             />
           ))}
         </div>
@@ -37,6 +36,7 @@ const Tables = ({ data }) => {
         <div className="buttonContainer">
           {data.map((item) => (
             <RadioButtons
+            cheked={item.name == activeValue ? true : false}
               name={item.name}
               key={item.name}
               activeValue={activeValue}

@@ -6,6 +6,7 @@ import Tables2 from "./components/Tables/Table2.js";
 
 function App() {
   const [data, setData] = useState([]);
+
   async function getData() {
     try {
       let response = await fetch("/list.json");
@@ -24,10 +25,10 @@ function App() {
   return (
     <div className="App">
       <div className="tableTop">
-        <Tables2 />
+        <Tables2 data={data} setData={setData} />
       </div>
       <div className="tableBottom">
-        <Tables data={data}/>
+        <Tables data={data} />
       </div>
     </div>
   );
