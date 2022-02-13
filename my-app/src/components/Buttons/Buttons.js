@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./Buttons.css";
 
 const Button = ({ name, activeValue, setActiveValue, onClick }) => {
-
   const handleClick = (e) => {
     setActiveValue(e.target);
   };

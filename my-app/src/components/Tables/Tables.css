@@ -1,19 +1,20 @@
 .tablesWrap {
   margin: 10px;
+  padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
 }
 
 .tablesRow {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 
-  grid-template-columns: 210px 70%;
+  grid-template-columns: 10% 90%;
 }
 
 .buttonContainer {
   display: grid;
   gap: 10px;
 
-  /* grid-template-columns: 210px 210px 210px 210px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }

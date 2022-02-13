@@ -17,7 +17,9 @@ const Tables = ({ data }) => {
               name={item.name}
               key={item.name}
               activeValue={activeValue}
-              setActiveValue={(item)=>{setActiveValue(item.name)}}
+              setActiveValue={(item) => {
+                setActiveValue(item.name);
+              }}
             />
           ))}
         </div>
@@ -36,7 +38,7 @@ const Tables = ({ data }) => {
         <div className="buttonContainer">
           {data.map((item) => (
             <RadioButtons
-            cheked={item.name == activeValue ? true : false}
+              cheked={item.name == activeValue ? true : false}
               name={item.name}
               key={item.name}
               activeValue={activeValue}

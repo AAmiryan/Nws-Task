@@ -2,9 +2,7 @@ import React from "react";
 import "./Selects.css";
 
 const Select = ({ data, activeValue, setActiveValue }) => {
-
   const handleChange = (e) => {
-    // console.log(e.target.value, 'SELECT');
     setActiveValue(e.target.value);
   };
 
@@ -12,7 +10,7 @@ const Select = ({ data, activeValue, setActiveValue }) => {
     <div>
       <select className="select" onChange={handleChange} value={activeValue}>
         {data?.map((item) => (
-          <option value={item.name} key={item.name} >
+          <option value={item.name} key={item.name}>
             {item.name}
           </option>
         ))}

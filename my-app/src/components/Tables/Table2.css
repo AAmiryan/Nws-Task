@@ -3,22 +3,18 @@
   padding: 10px;
   border: 1px solid gray;
   border-radius: 5px;
-
-  display: grid;
-  gap: 10px;
-  justify-items: start;
 }
 
 .tableRow {
   display: grid;
   gap: 10px;
 
-  grid-template-columns: 200px 90%;
+  grid-template-columns: 10% 90%;
 }
 
 .buttonContainer {
   display: grid;
-  gap: 20px;
+  gap: 10px;
 
-  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }

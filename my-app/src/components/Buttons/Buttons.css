@@ -1,5 +1,6 @@
 .button{
     height: 40px;
+    width: 70%;
     border: 2px solid red;
     color: red;
     background-color: white;
@@ -8,6 +9,7 @@
 
 .activ{
     height: 40px;
+    width: 70%;
     border: 2px solid red;
     color: white;
     background-color: red;

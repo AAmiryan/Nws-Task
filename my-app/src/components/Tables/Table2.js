@@ -5,10 +5,10 @@ import Input from "../Input/Input.js";
 import "./Table2.css";
 
 const reportPeriodType = [
-  { name: "Mesechnie", value: "m" },
-  { name: "Godovaya", value: "y" },
-  { name: "Kvartalnaya", value: "q" },
-  { name: "Neregulyarnaya", value: "r" },
+  { name: "Месечная", value: "m" },
+  { name: "Годовая", value: "y" },
+  { name: "Кварталная", value: "q" },
+  { name: "Нерегулярная", value: "r" },
 ];
 
 const Tables = ({ data, setData }) => {
@@ -24,7 +24,6 @@ const Tables = ({ data, setData }) => {
   };
 
   const handleKeypress = (event) => {
-    console.log(event, "??????????????????????????????");
     if (event.key === "Enter" && event.target.value !== "") {
       setData([
         ...data,
@@ -38,7 +37,7 @@ const Tables = ({ data, setData }) => {
             "Статистическая отчетность, представляемая в течение 10 рабочих дней после отчетной даты",
           reportPeriodType:
             "Отчетность на конец года, квартала (4 квартал), месяца (декабрь)",
-          description: "description",
+          description: description,
           entryPointDocument: `http://www.cbr.ru/xbrl/nso/ins/rep/2021-09-30/ep/ep_JTINS_10rd_0420162_y.xsd/${new Date().getTime()}`,
         },
       ]);
