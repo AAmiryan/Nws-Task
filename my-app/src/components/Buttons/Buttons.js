@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Buttons.css";
 
-const Button = ({ name, activeValue, setActiveValue, onClick }) => {
+const Button = ({ name, activeValue, setActiveValue, reportPeriod }) => {
   const handleClick = (e) => {
     setActiveValue(e.target);
   };
@@ -10,7 +10,7 @@ const Button = ({ name, activeValue, setActiveValue, onClick }) => {
     <div>
       <button
         type="button"
-        className={name === activeValue ? "activ" : "button"}
+        className={name === activeValue || reportPeriod === activeValue ? "activ" : "button"}
         onClick={handleClick}
         value={activeValue}
         name={name}

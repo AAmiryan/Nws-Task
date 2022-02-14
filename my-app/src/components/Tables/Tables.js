@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RadioButtons from "../RadioButtons/RadioButtons.js";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons";
+import {uuId} from "../../Utils/util"
 import "./Tables.css";
 
 const Tables = ({ data }) => {
@@ -10,12 +11,12 @@ const Tables = ({ data }) => {
   return (
     <div className="tablesWrap">
       <div className="tablesRow">
-        <div>Таскономия</div>
+        <div>Фонд</div>
         <div className="buttonContainer">
           {data.map((item) => (
             <Button
               name={item.name}
-              key={item.name}
+              key={uuId()}
               activeValue={activeValue}
               setActiveValue={(item) => {
                 setActiveValue(item.name);
@@ -25,7 +26,7 @@ const Tables = ({ data }) => {
         </div>
       </div>
       <div className="tablesRow">
-        <div>Таскономия</div>
+        <div>Фонд</div>
         <Select
           data={data}
           activeValue={activeValue}
@@ -34,13 +35,13 @@ const Tables = ({ data }) => {
       </div>
 
       <div className="tablesRow">
-        <div>Таскономия</div>
+        <div>Фонд</div>
         <div className="buttonContainer">
           {data.map((item) => (
             <RadioButtons
-              cheked={item.name == activeValue ? true : false}
+              cheked={item.name === activeValue ? true : false}
               name={item.name}
-              key={item.name}
+              key={uuId()}
               activeValue={activeValue}
               setActiveValue={setActiveValue}
             />

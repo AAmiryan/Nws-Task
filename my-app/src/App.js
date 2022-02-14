@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import Tables from "./components/Tables/Tables.js";
-import Tables2 from "./components/Tables/Table2.js";
+import TablesTop from "./components/Tables/TablesTop.js";
 
 function App() {
   const [data, setData] = useState([]);
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <div className="tableTop">
-        <Tables2 data={data} setData={setData} />
+        <TablesTop data={data} setData={setData} />
       </div>
       <div className="tableBottom">
         <Tables data={data} />

@@ -17,7 +17,7 @@ const RadioButton = ({ name, activeValue, setActiveValue, cheked }) => {
             onChange={handleChange}
             checked
           />
-          <label for={name}>{name}</label>
+          <label >{name}</label>
         </div>
       ) : (
         <div>
@@ -28,7 +28,7 @@ const RadioButton = ({ name, activeValue, setActiveValue, cheked }) => {
             id={name}
             onChange={handleChange}
           />
-          <label for={name}>{name}</label>
+          <label >{name}</label>
         </div>
       )}
     </div>

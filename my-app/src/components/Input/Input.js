@@ -4,7 +4,12 @@ import "./Input.css";
 const Input = ({ onkeypress }) => {
   return (
     <div>
-      <input className="input" onKeyPress={onkeypress} />
+      <input
+        className="input"
+        onKeyPress={onkeypress}
+        data-testid="input"
+        placeholder="Enter name"
+      />
     </div>
   );
 };

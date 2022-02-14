@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons.js";
 import Input from "../Input/Input.js";
-import "./Table2.css";
+import { uuId } from "../../Utils/util.js";
+import "./TablesTop.css";
 
 const reportPeriodType = [
   { name: "Месечная", value: "m" },
@@ -11,7 +12,7 @@ const reportPeriodType = [
   { name: "Нерегулярная", value: "r" },
 ];
 
-const Tables = ({ data, setData }) => {
+const TablesTop = ({ data, setData }) => {
   const [reportPeriod, setReportPeriod] = useState("m");
   const [description, setDescription] = useState(null);
 
@@ -46,15 +47,7 @@ const Tables = ({ data, setData }) => {
   };
 
   return (
-    <div className="table2Wrap">
-      <div className="tableRow">
-        <div>Таскономия</div>
-        <div className="buttonContainer">
-          {[1, 2, 3, 4, 5].map(() => (
-            <Button name="email" />
-          ))}
-        </div>
-      </div>
+    <div className="tableTopWrap">
       <div className="tableRow">
         <div>Период</div>
         <div className="buttonContainer">
@@ -63,6 +56,8 @@ const Tables = ({ data, setData }) => {
               name={item.name}
               setActiveValue={onChangeReportPeriodType}
               activeValue={item.value}
+              reportPeriod={reportPeriod}
+              key={uuId()}
             />
           ))}
         </div>
@@ -84,4 +79,4 @@ const Tables = ({ data, setData }) => {
   );
 };
 
-export default Tables;
+export default TablesTop;
