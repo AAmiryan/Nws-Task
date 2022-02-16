@@ -1,1 +1,0 @@
-export const uuId = () => Math.random() * 100;

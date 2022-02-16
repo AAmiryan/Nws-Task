@@ -20,7 +20,7 @@ function App() {
     if (data.length === 0) {
       getData();
     }
-  }, [data]);
+  }, []);
 
   return (
     <div className="App">

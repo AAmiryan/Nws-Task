@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons.js";
 import Input from "../Input/Input.js";
-import { uuId } from "../../Utils/util.js";
+import { v4 as uuidv4 } from 'uuid';
 import "./TablesTop.css";
 
 const reportPeriodType = [
@@ -57,7 +57,7 @@ const TablesTop = ({ data, setData }) => {
               setActiveValue={onChangeReportPeriodType}
               activeValue={item.value}
               reportPeriod={reportPeriod}
-              key={uuId()}
+              key={uuidv4()}
             />
           ))}
         </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RadioButtons from "../RadioButtons/RadioButtons.js";
 import Select from "../Selects/Selects.js";
 import Button from "../Buttons/Buttons";
-import {uuId} from "../../Utils/util"
+import { v4 as uuidv4 } from 'uuid';
 import "./Tables.css";
 
 const Tables = ({ data }) => {
@@ -16,7 +16,7 @@ const Tables = ({ data }) => {
           {data.map((item) => (
             <Button
               name={item.name}
-              key={uuId()}
+              key={uuidv4()}
               activeValue={activeValue}
               setActiveValue={(item) => {
                 setActiveValue(item.name);
@@ -39,9 +39,9 @@ const Tables = ({ data }) => {
         <div className="buttonContainer">
           {data.map((item) => (
             <RadioButtons
-              cheked={item.name === activeValue ? true : false}
+              isChecked={item.name === activeValue ? true : false}
               name={item.name}
-              key={uuId()}
+              key={uuidv4()}
               activeValue={activeValue}
               setActiveValue={setActiveValue}
             />

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Selects.css";
-import {uuId} from '../../Utils/util'
+import { v4 as uuidv4 } from "uuid";
 
 const Select = ({ data, activeValue, setActiveValue }) => {
   const handleChange = (e) => {
@@ -11,7 +11,7 @@ const Select = ({ data, activeValue, setActiveValue }) => {
     <div>
       <select className="select" onChange={handleChange} value={activeValue}>
         {data?.map((item) => (
-          <option value={item.name} key={uuId()}>
+          <option value={item.name} key={uuidv4()}>
             {item.name}
           </option>
         ))}

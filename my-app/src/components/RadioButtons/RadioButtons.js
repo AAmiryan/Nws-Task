@@ -1,13 +1,12 @@
 import React from "react";
 
-const RadioButton = ({ name, activeValue, setActiveValue, cheked }) => {
+const RadioButton = ({ name, activeValue, setActiveValue, isChecked }) => {
   const handleChange = (e) => {
     setActiveValue(e.target.id);
   };
 
   return (
     <div>
-      {cheked ? (
         <div>
           <input
             type="radio"
@@ -15,22 +14,10 @@ const RadioButton = ({ name, activeValue, setActiveValue, cheked }) => {
             name="radio"
             id={name}
             onChange={handleChange}
-            checked
+            checked={isChecked}
           />
           <label >{name}</label>
         </div>
-      ) : (
-        <div>
-          <input
-            type="radio"
-            value={activeValue}
-            name="radio"
-            id={name}
-            onChange={handleChange}
-          />
-          <label >{name}</label>
-        </div>
-      )}
     </div>
   );
 };
